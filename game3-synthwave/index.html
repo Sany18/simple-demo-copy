@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synthwave</title>
+</head>
+<body>
+  <div class="window moveable" style="width: 300px">
+    <div class="title-bar moveable-button">
+      <div class="title-bar-text">D:/Games/Synthwave</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="player-controll-div">
+        <div class="timer">00:00</div>
+
+        <div>
+          <button class="control"><i class="fa fa-step-backward"></i></button>
+          <button class="control"><i class="fa fa-play"></i></button>
+          <button class="control"><i class="fa fa-step-forward"></i></button>
+        </div>
+
+        <div class="field-row volume">
+          <label for="range21">Volume:</label>
+          <input id="range21" type="range" min="0" max="100" value="5" />
+        </div>
+      </div>
+
+      <div class="field-row player-row">
+        <input id="range22" type="range" value="0" />
+      </div>
+    </div>
+  </div>
+
+  <div id="menu">
+    <div class="item">
+      <input type="checkbox" id="hideFps">
+      <label for="hideFps">Hide fps</label>
+    </div>
+    <div class="item">
+      <input type="checkbox" id="tvEffect">
+      <label for="tvEffect">TV effect</label>
+    </div>
+    <div class="item">
+      <input type="checkbox" id="anaglyphEffect">
+      <label for="anaglyphEffect">Anaglypg effect</label>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+@import 'assets/win98theme/styles';
+
+body {
+  background-color: black;
+  font-family: Ms;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#menu {
+  font-family: Ms;
+  position: fixed;
+  left: 0;
+  width: 200px;
+  margin-left: -200px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  transition: .3s;
+  color: yellow;
+
+  &.show {
+    margin-left: 0px;
+    transition: .3s;
+  }
+}
+
+.item {
+  margin: 3px;
+}
+
+.player-controll-div {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .timer {
+    margin-right: -16px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .control {
+    min-width: unset;
+    min-height: unset;
+    padding: unset;
+    width: 28px;
+    height: 28px;
+
+    &:active {
+      padding: unset;
+    }
+  }
+
+  .volume {
+    width: 100px;
+  }
+}
+
+.player-row {
+  margin-bottom: 12px;
+}
+
+.moveable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: move;
+}

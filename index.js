@@ -1,0 +1,1 @@
+require('./be/server.js');

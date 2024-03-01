@@ -1,0 +1,6 @@
+export { default as T1 } from './skyhsky_ft.png'
+export { default as T2 } from './skyhsky_bk.png'
+export { default as T3 } from './skyhsky_up.png'
+export { default as T4 } from './skyhsky_dn.png'
+export { default as T5 } from './skyhsky_rt.png'
+export { default as T6 } from './skyhsky_lf.png'

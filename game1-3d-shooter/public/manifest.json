@@ -1,0 +1,21 @@
+{
+  "short_name": "3D Shooter",
+  "name": "3D Shooter",
+  "icons": [
+    {
+      "src": "icons/icon8-target-cloud-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "icons/icon8-target-cloud-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#000000"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "sgp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel server:dev fe:dev 3d-shooter:dev synthwave:dev",
+    "start:prod": "npm run server:prod --silent",
+
+    "build": "npm run fe:build && npm run 3d-shooter:build && npm run synthwave:build",
+
+    "server:dev": "nodemon index.js",
+    "server:prod": "node index.js",
+
+    "fe:dev": "webpack --config ./fe/webpack.common.js",
+    "fe:build": "webpack --config ./fe/webpack.prod.js",
+
+    "3d-shooter:dev": "cd game1-3d-shooter && npm run start:rest",
+    "3d-shooter:build": "cd game1-3d-shooter && npm run build:rest",
+
+    "synthwave:dev": "cd game3-synthwave && npm run start:dev",
+    "synthwave:build": "cd game3-synthwave && npm run build"
+  },
+  "keywords": [],
+  "author": "Hoxz",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "npm-run-all": "4.1.5",
+    "oimo": "1.0.9",
+    "three": "0.119.1",
+    "ws": "8.14.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.1",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/preset-env": "7.11.0",
+    "@babel/register": "7.10.5",
+    "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "6.0.3",
+    "css-loader": "4.2.1",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "4.3.0",
+    "nodemon": "2.0.6",
+    "sass": "1.26.10",
+    "sass-loader": "9.0.3",
+    "script-ext-html-webpack-plugin": "2.1.4",
+    "style-loader": "1.2.1",
+    "svg-inline-loader": "0.8.2",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12"
+  }
+}

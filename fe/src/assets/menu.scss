@@ -1,0 +1,121 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(assets/fonts/Ubuntu-R.ttf);
+}
+
+:root {
+  font-family: Ms;
+  background-color: #000;
+  cursor: url('assets/svg/cursor.svg'), default;
+  --yellow: #ffd319;
+  --orange: #ff901f;
+  --red: #ff2975;
+  --pink: #f222ff;
+  --purple: #8c1eff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Ubuntu;
+  // font: 16px Ms;
+}
+
+body {
+  color: white;
+  width: 100vw;
+  height: 100svh;
+  margin: 0;
+  padding: 0.5rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus,
+select:focus, button:focus {
+  outline: none;
+}
+
+.links-list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.link {
+  color: var(--orange);
+  padding: 1rem;
+  display: flex;
+  border: solid grey 5px;
+  user-select: none;
+  text-decoration: none;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--purple);
+    transition: all .2s ease-in-out;
+    box-shadow: var(--purple) 15px 15px 0px;
+    animation: glitch 4s infinite;
+    transition: box-shadow 3s linear;
+  }
+
+  &:active {
+    background: var(--yellow);
+  }
+
+  @keyframes glitch {
+    0% { text-shadow: var(--purple) 0px 0px 0px; }
+    39% { text-shadow: var(--purple) 0px 0px 0px; }
+    40% { text-shadow: var(--purple) -1px -2px 0px; }
+    41% { text-shadow: black -1px 3px 0px; }
+    42% { text-shadow: white -2px -2px 0px; }
+    53% { text-shadow: var(--purple) 0px 0px 0px; }
+    54% { text-shadow: var(--purple) 1px 0px 3px; }
+    60% { text-shadow: var(--purple) 0px 1px 0px; }
+    61% { text-shadow: var(--purple) 0px 0px 0px; }
+    100% { text-shadow: var(--purple) 0px 0px 0px; }
+  }
+}
+
+.text {
+  padding: 10px;
+  border: dashed var(--yellow) 1px;
+  max-width: 400px;
+  display: inline-block;
+}
+
+.context-menu {
+  color: black;
+  border: 1px solid #555;
+  position: absolute;
+  background-color: grey;
+  padding: 10px;
+  cursor: pointer;
+
+  a:hover, div:hover {
+    background-color: #555;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.moveable {
+  position: absolute;
+  user-select: none;
+}
+
+.introduce {
+  line-height: 1.5rem;
+
+  .name {
+    color: var(--yellow);
+  }
+}
