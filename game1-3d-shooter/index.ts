@@ -1,3 +1,5 @@
+'use client';
+
 import './utils/global-utils';
 import './assets/scss/styles.scss';
 

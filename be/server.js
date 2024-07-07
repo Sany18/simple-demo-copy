@@ -1,4 +1,5 @@
 require('dotenv').config({ path: './.env' });
+
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -12,28 +13,17 @@ const PORT = process.env.BE_PORT || 3999;
 const FE_PORT = process.env.FE_PORT || 3000;
 const currentEnv = process.env.NODE_ENV || 'development';
 
-let userId = 0;
-
 console.info('===============================');
 console.info(`env: ${currentEnv}`);
 console.info(`FE/BE: http://localhost:${PORT}`);
 console.info('===============================');
 console.info();
-
-//////////////////////////
-// http server
-/////////
 console.info('====== routes ======');
-//
-
-
 
 app.all('*', (req, res, next) => {
   if (req.method !== 'HEAD') logger(req);
   next();
 });
-
-
 
 /**************
  *     1      *
@@ -41,6 +31,8 @@ app.all('*', (req, res, next) => {
  **************/
 const games1 = '3d-shooter';
 console.info('route', `/${games1}*`);
+
+// app.use(`/${games1}/api`, require(`../game1-${games1}/`));
 
 app.get(`/${games1}*`, (req, res) => {
   const gameLocalPath = path.join(dist, `/${games1}`);
@@ -53,8 +45,6 @@ app.get(`/${games1}*`, (req, res) => {
   console.log(gameLocalPath, urlPath);
   res.sendFile(path.join(gameLocalPath, urlPath));
 });
-
-
 
 /**********
  *   2    *
@@ -74,8 +64,6 @@ app.get(`/${games2}*`, (req, res) => {
   res.sendFile(path.join(gameLocalPath, urlPath));
 });
 
-
-
 /*************
  *     3     *
  * synthwave *
@@ -93,26 +81,18 @@ app.get(route, (req, res) => {
   res.sendFile(path.join(gameLocalPath, urlPath));
 });
 
-
-
 /** */
-
 console.info('route', '/', '-> dist')
 app.use(express.static(dist));
 app.get('*', (req, res) => {
   res.sendFile(path.join(dist, 'index.html'));
 });
 
-//
 console.log('====================');
-/////////
+
 const httpServer = http.createServer(app);
 httpServer.listen(PORT);
-//////////////////////////
 
-///////////////////////
-// ws server
-///////
 const wsServer = new webSocketServer({ server: httpServer });
 
 wsServer.on('connection', ws => {

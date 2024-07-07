@@ -1,3 +1,5 @@
+import * as THREE from "three";
+
 import { Scene } from "../types/extended-threejs-types/scene.type";
 
 export interface LocationInterface {
